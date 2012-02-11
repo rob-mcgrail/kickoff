@@ -1,0 +1,9 @@
+h1. Kickoff
+
+h2. A simple template for HTML5 "Sinatra":http://www.sinatrarb.com/documentation apps.
+
+@$ gem install bundler@
+
+@$ bundle install@
+
+@$ rackup -s mongrel -p 9000@
