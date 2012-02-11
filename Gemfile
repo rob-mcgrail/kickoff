@@ -24,3 +24,6 @@ gem "RedCloth"
 # Authentication
 gem "warden"
 gem "bcrypt-ruby"
+
+#Scripts
+gem "trollop"

@@ -1,0 +1,15 @@
+require 'rubygems'
+require 'app.rb'
+require 'trollop'
+
+opts = Trollop::options do
+  opt :environment, "Select environment", :default => 'development'
+end
+
+puts 'Non-destructively updating databases...'
+
+set :environment, opts[:environment].to_sym
+
+puts 'Updating database ' + settings.db
+
+DataMapper.auto_upgrade!
