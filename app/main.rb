@@ -1,5 +1,5 @@
 get '/?' do
   title 'home'
-  flash[:success] = 'Everything is fine.'
+  flash[:success] = '<strong>Everything</strong> is fine.'
   haml :main
 end
