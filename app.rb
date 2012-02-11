@@ -13,7 +13,6 @@ require 'redis'
 # Templates
 require 'haml'
 require 'RedCloth'
-#require 'rack-lesscss'
 # Authentication
 require 'warden'
 require 'bcrypt'
