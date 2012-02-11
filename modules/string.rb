@@ -1,8 +1,8 @@
 # Helpers added to String
 
 class String
-  def parameterize
-    self.gsub(/[^a-z0-9\-_!?]+/i, '-').downcase
+  def parameterize(delimeter = '-')
+    self.gsub(/[^a-z0-9\-_!?]+/i, delimeter).downcase
   end
 
   def to_hash

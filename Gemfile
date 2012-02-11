@@ -7,7 +7,6 @@ gem "sinatra-flash"
 
 # Servers
 gem "mongrel"
-gem "unicorn"
 gem "thin"
 
 # Datampper sqlite

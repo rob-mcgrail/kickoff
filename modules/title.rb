@@ -1,8 +1,8 @@
 helpers do
-  def title(s)
+  def title(arg)
     sitename = 'Kickoff'
-    if s
-      sitename = sitename + ' | ' + s
+    if arg
+      sitename = sitename + ' | ' + arg
     end
     @title = sitename
   end
