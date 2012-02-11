@@ -10,14 +10,14 @@ configure :development do
   set :db, 'sqlite3://' + settings.root + '/db/development.sqlite3'
   set :raise_errors, true
   set :show_exceptions, true
-  set :haml, {:format => :html5, :ugly => false }
+  set :haml, {:format => :html5, :ugly => false, :escape_html => true}
 end
 
 configure :production do
   set :db, 'sqlite3://' + settings.root + '/db/production.sqlite3'
   set :raise_errors, false
   set :show_exceptions, false
-  set :haml, {:format => :html5, :ugly => true }
+  set :haml, {:format => :html5, :ugly => true, :escape_html => true}
 end
 
 # Database

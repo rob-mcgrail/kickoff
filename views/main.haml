@@ -1,1 +1,21 @@
-~ textile @content if @content
+.row
+    .span5
+        :textile
+            h2. Useful front-end defaults
+            
+            * Clean "haml":http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html template with "HTML5 Shiv v3":http://code.google.com/p/html5shiv/ fallback.          
+            * "Twitter bootstrap":http://twitter.github.com/bootstrap/ stylesheets and ui elements. 
+            * "Jquery":http://jquery.com/ with Bootstrap plugins included by default.
+            * Bootstrap "less":http://www.lesscss.org/ compiled on the fly by rack.
+            * "Google prettify":http://code.google.com/p/google-code-prettify/ syntax highlighting enabled by default.
+            
+    .span5
+        :textile
+            h2. Backend essentials and tweaks
+            
+            * "Datamapper":http://datamapper.org/ and "Redis":http://redis.io/ libraries with sensible defaults.
+            * Session flash ready to go - refresh this page.
+            * Static files served by rack in development mode.
+            * "Warden":https://github.com/hassox/warden authentication template.
+            
+

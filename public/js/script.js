@@ -1,4 +1,3 @@
-/* Enable bootstrap alert dismissal */
 
 
 

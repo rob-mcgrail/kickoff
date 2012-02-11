@@ -8,13 +8,9 @@
         %meta{:content => "", :name => "author"}
         %meta{:content => "width=device-width", :name => "viewport"}
         %link{:href => 'img/favicon.ico', :type => 'image/x-icon', :rel => "shortcut icon"}
-        %link{:href => "css/bootstrap.css", :rel => "stylesheet"}
-        :css
-            body {
-              padding-top: 60px;
-              padding-bottom: 40px;
-            }
-        %link{:href => "css/bootstrap-responsive.css", :rel => "stylesheet"}
+        %link{:href => "less/style.less", :rel => "stylesheet/less"}
+        %script{:src => "js/libs/less-1.2.1.min.js"}
+        %link{:href => "css/prettify.css", :rel => "stylesheet"}
         %link{:href => "css/style.css", :rel => "stylesheet"}
         /[if lt IE 9]
             %script{:src => '//html5shiv.googlecode.com/svn/trunk/html5.js'}
@@ -23,31 +19,33 @@
     %body
         .container
             .header
-                = haml :header
+                != haml :header
             / /header
             
             -# Alerts via flash[:success] = 'RON PAUL'
             .flashes
-                .row
-                    .span4
-                        = haml :flashes        
+                != haml :flashes        
             / /flashes
             
             -# Views via :haml :'things/table'
             .content
-                = yield if block_given?
+                != yield if block_given?
             / /content
 
             %footer
-                = haml :footer
+                != haml :footer
             / /footer
             
         / /container
         
         %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
         :javascript
-            window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')
-        
+            window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')    
+
+        -# Google pretify
+        %script{:src => "js/libs/prettify/prettify.js"}
+        %script prettyPrint();
+                
         -# Remove bootstrap scripts as required
         %script{:src => "js/libs/bootstrap/transition.js"}
         %script{:src => "js/libs/bootstrap/alert.js"}
