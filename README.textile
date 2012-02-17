@@ -6,4 +6,4 @@ h2. A simple template for HTML5 "Sinatra":http://www.sinatrarb.com/documentation
 
 @$ bundle install@
 
-@$ rackup -s mongrel -p 9000@
+@$ bundle exec rackup -s mongrel -p 9000@
