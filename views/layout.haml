@@ -7,14 +7,14 @@
         %meta{:content => "", :name => "description"}
         %meta{:content => "", :name => "author"}
         %meta{:content => "width=device-width", :name => "viewport"}
-        %link{:href => 'img/favicon.ico', :type => 'image/x-icon', :rel => "shortcut icon"}
-        %link{:href => "less/style.less", :rel => "stylesheet/less"}
-        %script{:src => "js/libs/less-1.2.1.min.js"}
-        %link{:href => "css/prettify.css", :rel => "stylesheet"}
-        %link{:href => "css/style.css", :rel => "stylesheet"}
+        %link{:href => '/img/favicon.ico', :type => 'image/x-icon', :rel => "shortcut icon"}
+        %link{:href => "/less/style.less", :rel => "stylesheet/less"}
+        %script{:src => "/js/libs/less-1.2.1.min.js"}
+        %link{:href => "/css/prettify.css", :rel => "stylesheet"}
+        %link{:href => "/css/style.css", :rel => "stylesheet"}
         /[if lt IE 9]
             %script{:src => '//html5shiv.googlecode.com/svn/trunk/html5.js'}
-            %script window.html5 || document.write('<script src="js/libs/html5.js"><\/script>')      
+            %script window.html5 || document.write('<script src="/js/libs/html5.js"><\/script>')      
 
     %body
         .container
@@ -40,26 +40,26 @@
         
         %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}
         :javascript
-            window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')    
+            window.jQuery || document.write('<script src="/js/libs/jquery-1.7.1.min.js"><\/script>')    
 
         -# Google pretify
         %script{:src => "js/libs/prettify/prettify.js"}
         %script prettyPrint();
                 
         -# Remove bootstrap scripts as required
-        %script{:src => "js/libs/bootstrap/transition.js"}
-        %script{:src => "js/libs/bootstrap/alert.js"}
-        %script{:src => "js/libs/bootstrap/modal.js"}
-        %script{:src => "js/libs/bootstrap/dropdown.js"}
-        %script{:src => "js/libs/bootstrap/scrollspy.js"}
-        %script{:src => "js/libs/bootstrap/tab.js"}
-        %script{:src => "js/libs/bootstrap/tooltip.js"}
-        %script{:src => "js/libs/bootstrap/popover.js"}
-        %script{:src => "js/libs/bootstrap/button.js"}
-        %script{:src => "js/libs/bootstrap/collapse.js"}
-        %script{:src => "js/libs/bootstrap/carousel.js"}
-        %script{:src => "js/libs/bootstrap/typeahead.js"}
-        %script{:src => "js/script.js"} 
+        %script{:src => "/js/libs/bootstrap/transition.js"}
+        %script{:src => "/js/libs/bootstrap/alert.js"}
+        %script{:src => "/js/libs/bootstrap/modal.js"}
+        %script{:src => "/js/libs/bootstrap/dropdown.js"}
+        %script{:src => "/js/libs/bootstrap/scrollspy.js"}
+        %script{:src => "/js/libs/bootstrap/tab.js"}
+        %script{:src => "/js/libs/bootstrap/tooltip.js"}
+        %script{:src => "/js/libs/bootstrap/popover.js"}
+        %script{:src => "/js/libs/bootstrap/button.js"}
+        %script{:src => "/js/libs/bootstrap/collapse.js"}
+        %script{:src => "/js/libs/bootstrap/carousel.js"}
+        %script{:src => "/js/libs/bootstrap/typeahead.js"}
+        %script{:src => "/js/script.js"} 
         
         -#
             :javascript
