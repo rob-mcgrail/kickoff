@@ -2,8 +2,14 @@ h1. Kickoff
 
 h2. A simple template for HTML5 "Sinatra":http://www.sinatrarb.com/documentation apps.
 
+@$ git clone git://github.com/robomc/kickoff.git@
+
+@$ cd kickoff@
+
 @$ gem install bundler@
 
 @$ bundle install@
 
 @$ bundle exec rackup -s mongrel -p 9000@
+
+Visit http://0.0.0.0:9000
