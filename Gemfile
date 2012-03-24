@@ -6,7 +6,6 @@ gem "sinatra-static-assets"
 gem "sinatra-flash"
 
 # Servers
-gem "mongrel"
 gem "thin"
 
 # Datampper sqlite
