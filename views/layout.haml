@@ -8,8 +8,16 @@
         %meta{:content => "", :name => "author"}
         %meta{:content => "width=device-width", :name => "viewport"}
         %link{:href => '/img/favicon.ico', :type => 'image/x-icon', :rel => "shortcut icon"}
-        %link{:href => "/less/style.less", :rel => "stylesheet/less"}
-        %script{:src => "/js/libs/less-1.2.1.min.js"}
+        
+        - if settings.development?
+            %link{:href => "less/style.less", :rel => "stylesheet/less"}
+            %script{:src => "js/libs/less-1.2.1.min.js"}
+            
+        - if settings.production?
+            %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}
+        
+        %link{:href => "css/style.css", :rel => "stylesheet"}
+        
         %link{:href => "/css/prettify.css", :rel => "stylesheet"}
         %link{:href => "/css/style.css", :rel => "stylesheet"}
         /[if lt IE 9]
