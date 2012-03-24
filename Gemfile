@@ -14,7 +14,6 @@ gem "dm-sqlite-adapter"
 
 # Redis
 gem "redis"
-gem "SystemTimer"
 
 # Templating
 gem "haml"
