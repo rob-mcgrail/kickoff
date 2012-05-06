@@ -1,29 +1,15 @@
 require 'rubygems'
-require 'bundler'
+require 'bundler/setup'
 
-Bundler.setup(:default)
+Bundler.require(:default)
+Bundler.require(:dev) if settings.development?
+Bundler.require(:production) if settings.production?
 
-require './app'
+require './settings'
 
+Dir['./modules/*.rb'].each {|file| require file }
+Dir['./app/*.rb'].each {|file| require file }
 
-# Rack configuration
-# Serves static files in dev
-# makes available /__rack_bug__/bookmarklet.html
-# No password
-if settings.development?
-  require 'rack/bug'
-  use Rack::Static, :urls => ['/css', '/img', '/js', '/less', '/robots.txt', '/favicons.ico'], :root => "public"
-  use Rack::Bug, :secret_key => 'youneedthisforsqldebugging'
-end
+DataMapper.finalize
 
-# Authentication middleware
-# https://github.com/hassox/warden/wiki/overview
-
-use Warden::Manager do |mgmt|
-  mgmt.default_strategies :password
-  mgmt.failure_app = Sinatra::Application
-end
-
-
-# Run
 run Sinatra::Application

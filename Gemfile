@@ -1,29 +1,28 @@
 source :rubygems
 
-# Sinatra
 gem "sinatra"
-gem "sinatra-static-assets"
 gem "sinatra-flash"
-
-# Servers
-gem "thin"
-gem "unicorn"
-gem "rack-bug"
-
-# Datampper sqlite
 gem "datamapper"
-gem "dm-sqlite-adapter"
-
-# Redis
-gem "redis"
-
-# Templating
+gem "erubis"
 gem "haml"
 gem "RedCloth"
-
-# Authentication
 gem "warden"
 gem "bcrypt-ruby"
-
-#Scripts
 gem "trollop"
+
+group :dev do
+  gem "thin"
+  gem "dm-sqlite-adapter"
+end
+
+group :production do
+  # libraries required by production go here
+  # For instance, perhaps a new db adaptor...
+  gem "dm-sqlite-adapter"
+end
+
+group :test do
+  gem "minitest", :platforms => :mri_18
+  gem "minitest-colorize"
+  gem "webmock"
+end

@@ -3,7 +3,6 @@ configure do
   set :sessions, true
   set :logging, false # stops annoying double log messages.
   set :static, false # see config.ru for dev mode static file serving
-  set :redis, 1 # redis database
 end
 
 configure :development do
@@ -20,6 +19,20 @@ configure :production do
   set :haml, {:format => :html5, :ugly => true, :escape_html => true}
 end
 
+# Rack configuration
+# Serve static files in dev
+if settings.development?
+  use Rack::Static, :urls => ['/css', '/img', '/js', '/less', '/robots.txt', '/favicons.ico'], :root => "public"
+end
+
+# Authentication middleware
+# https://github.com/hassox/warden/wiki/overview
+use Warden::Manager do |mgmt|
+  mgmt.default_strategies :password
+  mgmt.failure_app = Sinatra::Application
+end
+
+
 # Database
 # http://datamapper.rubyforge.org/dm-core/DataMapper.html
 
@@ -27,9 +40,4 @@ DataMapper.setup(:default, settings.db)
 
 DataMapper::Property::String.length(255)
 DataMapper::Property.required(true)
-DataMapper::Logger.new($stdout, :info) if settings.development?
-
-# Redis
-# http://redis.io/commands
-$redis = Redis.new
-$redis.select settings.redis
+#DataMapper::Logger.new($stdout, :info) if settings.development?
