@@ -7,11 +7,13 @@ require './app'
 
 
 # Rack configuration
-
-# Serve static files in dev 
-
+# Serves static files in dev
+# makes available /__rack_bug__/bookmarklet.html
+# No password
 if settings.development?
+  require 'rack/bug'
   use Rack::Static, :urls => ['/css', '/img', '/js', '/less', '/robots.txt', '/favicons.ico'], :root => "public"
+  use Rack::Bug, :secret_key => 'youneedthisforsqldebugging'
 end
 
 # Authentication middleware
@@ -24,5 +26,4 @@ end
 
 
 # Run
-
 run Sinatra::Application

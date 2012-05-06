@@ -1,12 +1,14 @@
 source :rubygems
 
 # Sinatra
-gem "sinatra" 
+gem "sinatra"
 gem "sinatra-static-assets"
 gem "sinatra-flash"
 
 # Servers
 gem "thin"
+gem "unicorn"
+gem "rack-bug"
 
 # Datampper sqlite
 gem "datamapper"
