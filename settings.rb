@@ -3,7 +3,7 @@ configure do
   set :sessions, true
   set :logging, false # stops annoying double log messages.
   set :static, false # see config.ru for dev mode static file serving
-  set :asset_timestamps, false
+  set :asset_timestamps, false # true for ?9879879 asset stamps
 end
 
 configure :development do
@@ -14,7 +14,7 @@ configure :development do
 end
 
 configure :production do
-  set :db, 'sqlite3://' + settings.root + '/db/production.sqlite3'
+  set :db, 'mysql://user:password@hostname/database'
   set :raise_errors, false
   set :show_exceptions, false
   set :haml, {:format => :html5, :ugly => true, :escape_html => true}
