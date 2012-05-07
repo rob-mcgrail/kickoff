@@ -1,6 +1,5 @@
 configure do
   set :method_override, true # For HTTP verbs
-  set :sessions, true
   set :logging, false # stops annoying double log messages.
   set :static, false # see config.ru for dev mode static file serving
   set :asset_timestamps, false # true for ?9879879 asset stamps
