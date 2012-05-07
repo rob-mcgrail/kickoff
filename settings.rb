@@ -3,6 +3,7 @@ configure do
   set :sessions, true
   set :logging, false # stops annoying double log messages.
   set :static, false # see config.ru for dev mode static file serving
+  set :asset_timestamps, false
 end
 
 configure :development do

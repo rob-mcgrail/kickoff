@@ -59,9 +59,10 @@ module Sinatra
       def asset_url_for(source)
         url = url_for(source)
         return url if is_uri?(source)
-
-        timestamp = asset_timestamp(source)
-        url += "?#{timestamp}" unless timestamp.empty?
+        if settings.asset_timestamps
+          timestamp = asset_timestamp(source)
+          url += "?#{timestamp}" unless timestamp.empty?
+        end
         return url
       end
 
