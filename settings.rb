@@ -33,6 +33,10 @@ use Warden::Manager do |mgmt|
   mgmt.failure_app = Sinatra::Application
 end
 
+use Rack::Session::Cookie, :key => 'kickoff.session',
+                           :path => '/',
+                           :expire_after => 2592000, # In seconds
+                           :secret => 'change_me_in_production'
 
 # Database
 # http://datamapper.rubyforge.org/dm-core/DataMapper.html
@@ -40,5 +44,4 @@ end
 DataMapper.setup(:default, settings.db)
 
 DataMapper::Property::String.length(255)
-DataMapper::Property.required(true)
-#DataMapper::Logger.new($stdout, :info) if settings.development?
+DataMapper::Logger.new($stdout, :info) if settings.development?
