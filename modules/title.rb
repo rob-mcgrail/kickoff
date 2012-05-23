@@ -1,9 +1,5 @@
 helpers do
-  def title(arg)
-    sitename = 'Kickoff'
-    if arg
-      sitename = sitename + ' | ' + arg
-    end
-    @title = sitename
+  def title(arg = nil)
+    @title = arg ? 'Kickoff | ' + arg : @title = 'Kickoff'
   end
 end
