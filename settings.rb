@@ -20,6 +20,10 @@ configure :production do
   set :haml, {:format => :html5, :ugly => true, :escape_html => true}
 end
 
+configure :test do
+  set :db, 'sqlite3://' + settings.root + '/db/test.sqlite3'
+end
+
 # Rack configuration
 # Serve static files in dev
 if settings.development?
