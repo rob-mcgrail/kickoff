@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="span7">
+        <% if flash[:default] %>
+            <div class="alert fade in">
+                <%= link_to 'x', '#', {:class => 'close', 'data-dismiss' => 'alert'} %>
+                <%= flash[:default] %>
+            </div>
+        <% end %>
+
+        <% if flash[:info] %>
+            <div class="alert alert-info fade in">
+                <%= link_to 'x', '#', {:class => 'close', 'data-dismiss' => 'alert'} %>
+                <%= flash[:info] %>
+            </div>
+        <% end %>
+
+        <% if flash[:success] %>
+            <div class="alert alert-success fade in">
+                <%= link_to 'x', '#', {:class => 'close', 'data-dismiss' => 'alert'} %>
+                <%= flash[:success] %>
+            </div>
+        <% end %>
+
+        <% if flash[:error] %>
+            <div class="alert alert-error fade in">
+                <%= link_to 'x', '#', {:class => 'close', 'data-dismiss' => 'alert'} %>
+                <%= flash[:error] %>
+            </div>
+        <% end %>
+    </div>
+</div>

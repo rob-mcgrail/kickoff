@@ -1,0 +1,83 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title><%= @title || '' %></title>
+  <meta name="description" content="">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <% if settings.development? %>
+      <link rel="stylesheet/less" href="/less/style.less">
+      <%= javascript_tag "/js/libs/less-1.2.1.min.js" %>
+  <% end %>
+
+  <% if settings.production? %>
+      <%= stylesheet_tag "/css/bootstrap.min.css" %>
+  <% end %>
+
+  <%= stylesheet_tag "/css/prettify.css" %>
+  <%= stylesheet_tag "/css/style.css" %>
+
+    <!--[if lt IE 9]>
+      <script src='//html5shiv.googlecode.com/svn/trunk/html5.js'></script>
+      <script>window.html5 || document.write('<script src="/js/libs/html5.js"><\/script>')</script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+        <%= erb :_header %>
+    </div>
+
+    <div class="flashes">
+        <%= erb :_flashes %>
+    </div>
+
+    <div class="content">
+        <%= yield if block_given? %>
+    </div>
+
+    <footer>
+        <%= erb :_footer %>
+    </footer>
+  </div> <!-- eo #container -->
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+  <script>window.jQuery || document.write("<script src='/js/libs/jquery-1.7.1.min.js'>\x3C/script>")</script>
+
+  <%= javascript_tag "/js/libs/prettify/prettify.js" %>
+  <script>prettyPrint();</script>
+
+  <%= javascript_tag "/js/libs/bootstrap/transition.js" %>
+  <%= javascript_tag "/js/libs/bootstrap/alert.js" %>
+  <%= javascript_tag "/js/libs/bootstrap/modal.js" %>
+  <%= javascript_tag "/js/libs/bootstrap/dropdown.js" %>
+  <%= javascript_tag "/js/libs/bootstrap/scrollspy.js" %>
+  <%= javascript_tag "/js/libs/bootstrap/tab.js" %>
+  <%= javascript_tag "/js/libs/bootstrap/tooltip.js" %>
+  <%= javascript_tag "/js/libs/bootstrap/popover.js" %>
+  <%= javascript_tag "/js/libs/bootstrap/button.js" %>
+  <%= javascript_tag "/js/libs/bootstrap/collapse.js" %>
+  <%= javascript_tag "/js/libs/bootstrap/carousel.js" %>
+  <%= javascript_tag "/js/libs/bootstrap/typeahead.js" %>
+
+  <%= javascript_tag "/js/script.js" %>
+  <!--<script>
+    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]]; // Change UA-XXXXX-X to be your site's ID
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+    s.parentNode.insertBefore(g,s)}(document,"script"));
+  </script>-->
+
+</body>
+</html>

@@ -6,6 +6,7 @@ configure do
 end
 
 configure :development do
+  set :asset_timestamps, true
   set :db, 'sqlite3://' + settings.root + '/db/development.sqlite3'
   set :raise_errors, true
   set :show_exceptions, true
