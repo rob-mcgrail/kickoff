@@ -27,7 +27,7 @@ end
 # Rack configuration
 # Serve static files in dev
 if settings.development?
-  use Rack::Static, :urls => ['/css', '/img', '/js', '/less', '/robots.txt', '/favicons.ico'], :root => "public"
+  use Rack::Static, :urls => ['/css', '/img', '/js', '/less', '/fonts', '/robots.txt', '/favicons.ico'], :root => "public"
 end
 
 # Authentication middleware
